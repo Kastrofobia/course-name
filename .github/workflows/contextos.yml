@@ -1,0 +1,8 @@
+name: contexto
+on: push
+jobs:
+  checkear-rama-main:
+    if: ${{ github.ref=='refs/heads/main'}}
+    runs-on: ubuntu-latest
+    steps:
+        - run: echo "desplegando en la rama $GITHUB_REF"

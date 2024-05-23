@@ -1,14 +1,14 @@
 name: Triggers
-
+run-name: ¡Prueba de varios Triggers!
 on:
+ push:
+    branches: [ "main" ]
   pull-request:
-    types: [opened]
-  issue comment:
-    types: [created]
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    types: [opened,reopened]
+    paths:
+      - '**.py'
+  issues:
+    types:  [labeled]
 jobs:
   build:
 

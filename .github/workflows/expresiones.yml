@@ -1,0 +1,27 @@
+
+name: expresiones
+on:
+    workflow_dispatch:
+      inputs:
+        nombre: 
+          description: 'tu nombre'
+          required: true
+          default: 'sebastian'
+          type: string
+        ¿Te gusta Halo?:
+          description: '¿Te gusta Halo?'
+          required: true
+          type: boolean
+jobs:
+  Respuesta_afirmativa:
+                      if: ${{ inputs.¿Te gusta Halo?==true }}
+                      runs-on: ubuntu-latest
+                      steps:
+                        - name: Muestra de resultado
+                          run: echo ${{ inputs.nombre }} es fan de la saga Halo
+  Respuesta_negativa:
+                    if: ${{ inputs.Te gusta Halo?!=true }}
+                    runs-on: ubuntu-latest
+                    steps:
+                      - name: Muestra de resultado
+                        run: echo ${{ inputs.nombre }} no conoce la saga Halo

@@ -1,0 +1,15 @@
+name: Saludo usando variables
+on:
+  workflow_dispatch
+env:
+    Dia_de_semana: Lunes
+jobs:
+  saludo-variables:
+    runs-on: ubuntu-latest
+    env:
+      Saludo: Hola
+    steps:
+      - name: Imprimir saludo
+        run: echo "$Saludo, $Nombre,. Hoy es $Dia_de_semana!"
+        env:
+          Nombre: Sebastian
